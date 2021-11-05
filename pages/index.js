@@ -1,13 +1,28 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import tw from "tailwind-styled-components";
+import Map from "./components/Map";
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <div className={styles.map}>Map</div>
+  // const map = new mapboxgl.Map({
+  //   container: "YOUR_CONTAINER_ELEMENT_ID",
+  //   style: "mapbox://styles/mapbox/streets-v11",
+  // });
 
-      <div className={styles.start}>Main</div>
-    </div>
+  return (
+    <Wrapper>
+      <Map />
+      <Main></Main>
+    </Wrapper>
   );
 }
+
+const Wrapper = tw.div`
+
+  flex flex-col bg-gray-500 h-screen		
+
+`;
+
+const Main = tw.div`
+  flex-1 bg-red-400	
+`;

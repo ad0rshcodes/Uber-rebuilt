@@ -1,17 +1,17 @@
 .container {
   padding: 0 2rem;
+  background-color: darkred;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .map {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
   background-color: #0070f3;
+  flex: 1;
 }
 
 .start {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
   background-color: aqua;
+  flex: 1;
 }
