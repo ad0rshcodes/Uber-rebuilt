@@ -4,15 +4,19 @@ import tw from "tailwind-styled-components";
 import Map from "./components/Map";
 
 export default function Home() {
-  // const map = new mapboxgl.Map({
-  //   container: "YOUR_CONTAINER_ELEMENT_ID",
-  //   style: "mapbox://styles/mapbox/streets-v11",
-  // });
-
   return (
     <Wrapper>
       <Map />
-      <Main></Main>
+      <ActionItems>
+        <Header>
+          {/* Uber logo */}
+          <UberLogo src="https://i.ibb.co/84stgjq/uber-technologies-new-20218114.jpg" />
+          <Profile>
+            <Name> Adarsh</Name>
+            <UserImage src="" />
+          </Profile>
+        </Header>
+      </ActionItems>
     </Wrapper>
   );
 }
@@ -23,6 +27,26 @@ const Wrapper = tw.div`
 
 `;
 
-const Main = tw.div`
-  flex-1 bg-red-400	
+const ActionItems = tw.div`
+  flex-1
+`;
+
+const Header = tw.div`
+  
+`;
+
+const UberLogo = tw.img`
+  h-28
+
+`;
+
+const Profile = tw.div`
+
+`;
+
+const Name = tw.div`
+
+`;
+
+const UserImage = tw.img`
 `;
