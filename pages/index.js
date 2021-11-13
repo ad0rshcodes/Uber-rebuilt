@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import tw from "tailwind-styled-components";
 import Map from "./components/Map";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -19,19 +20,46 @@ export default function Home() {
         </Header>
 
         <ActionButtons>
-          <Button>
-            <ButtonImg src="https://i.ibb.co/Xx4G91m/uberblack.png"></ButtonImg>
-            Ride
-          </Button>
-          <Button>
-            <ButtonImg src="https://i.ibb.co/n776JLm/bike.png"></ButtonImg>
-            Wheels
-          </Button>
-          <Button>
-            <ButtonImg src="https://i.ibb.co/5RjchBg/uberschedule.png"></ButtonImg>
-            Schedule
-          </Button>
+          <Link href="/search">
+            <Button>
+              <ButtonImg src="https://i.ibb.co/Xx4G91m/uberblack.png"></ButtonImg>
+              Ride
+            </Button>
+          </Link>
+
+          <Link href="/search">
+            <Button>
+              <ButtonImg src="https://i.ibb.co/n776JLm/bike.png"></ButtonImg>
+              Wheels
+            </Button>
+          </Link>
+
+          <Link href="/search">
+            <Button>
+              <ButtonImg src="https://i.ibb.co/5RjchBg/uberschedule.png"></ButtonImg>
+              Schedule
+            </Button>
+          </Link>
         </ActionButtons>
+
+        <Link href="/search">
+          <InputButton>
+            Where to?
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              fill="currentColor"
+              class="bi bi-chevron-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+              />
+            </svg>
+          </InputButton>
+        </Link>
       </ActionItems>
     </Wrapper>
   );
@@ -56,7 +84,7 @@ const UberLogo = tw.img`
 `;
 
 const Profile = tw.div`
-  flex justify-end items-center
+  flex items-center
 `;
 
 const Name = tw.div`
@@ -79,4 +107,10 @@ const Button = tw.div`
 
 const ButtonImg = tw.img`
   h-28
+`;
+
+const InputButton = tw.button`
+
+  bg-gray-200 p-5 rounded-lg w-96 mt-8 text-2xl flex justify-between hover:scale-105 transform transition duration-300 ease-in-out justify-center m-auto
+
 `;
