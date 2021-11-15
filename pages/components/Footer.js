@@ -24,7 +24,7 @@ export default function Footer() {
         </SocialIcons>
 
         <Names>
-          Made with 🔥 by:
+          Made with 🚀 by:
           <Link href="https://adarshsharma.ml/" passHref={true}>
             Adarsh Sharma
           </Link>
@@ -41,7 +41,7 @@ const SourceLinks = tw.div`
 `;
 
 const SocialIcons = tw.div`
-  flex justify-center gap-4
+  flex justify-center gap-4 cursor-pointer
 
 `;
 

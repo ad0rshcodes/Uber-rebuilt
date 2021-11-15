@@ -101,7 +101,7 @@ const ActionButtons = tw.div`
 `;
 
 const Button = tw.div`
-  flex bg-gray-200 rounded-lg shadow-lg mx-3 hover:shadow-xl transition-shadow duration-300 ease-in-out justify-center items-center flex-col flex-1 transition text-xl transform hover:scale-105
+  flex bg-gray-200 rounded-lg shadow-lg mx-3 hover:shadow-xl transition-shadow duration-300 ease-in-out justify-center items-center flex-col flex-1 transition text-xl transform hover:scale-105 cursor-pointer
 
 `;
 

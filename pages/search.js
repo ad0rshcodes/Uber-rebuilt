@@ -46,7 +46,9 @@ export default function search() {
       </SavedPlaces>
 
       <Confirm>
-        <ConfirmButton>Confirm Locations</ConfirmButton>
+        <Link href="confirm">
+          <ConfirmButton>Confirm Locations</ConfirmButton>
+        </Link>
       </Confirm>
       <Footer />
     </Wrapper>
@@ -58,7 +60,7 @@ const Wrapper = tw.div`
 `;
 
 const BackIcon = tw.div`
-  bg-white p-3
+  bg-white p-3 cursor-pointer
 
 `;
 
@@ -112,7 +114,7 @@ const StarIcon = tw.img`
 `;
 
 const ConfirmButton = tw.button`
-  bg-black text-white rounded-lg m-4 w-full p-2 text-xl
+  bg-black text-white rounded-lg m-4 w-full p-2 text-2xl
 
 `;
 
