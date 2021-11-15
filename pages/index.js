@@ -1,5 +1,3 @@
-import Head from "next/head";
-import Image from "next/image";
 import tw from "tailwind-styled-components";
 import Map from "./components/Map";
 import Link from "next/link";
@@ -94,7 +92,7 @@ const Name = tw.div`
 `;
 
 const UserImage = tw.img`
-rounded-full w-14 border-gray-800 border-2
+  rounded-full w-14 border-gray-800 border-2
 `;
 
 const ActionButtons = tw.div`
@@ -103,7 +101,7 @@ const ActionButtons = tw.div`
 `;
 
 const Button = tw.div`
-    flex bg-gray-200 rounded-lg shadow-lg mx-3 hover:shadow-xl transition-shadow duration-300 ease-in-out justify-center items-center flex-col flex-1 transition text-xl transform hover:scale-105
+  flex bg-gray-200 rounded-lg shadow-lg mx-3 hover:shadow-xl transition-shadow duration-300 ease-in-out justify-center items-center flex-col flex-1 transition text-xl transform hover:scale-105
 
 `;
 

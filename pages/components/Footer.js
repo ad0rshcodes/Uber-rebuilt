@@ -46,6 +46,6 @@ const SocialIcons = tw.div`
 `;
 
 const Names = tw.div`
-  flex justify-center pt-4
+  flex justify-center pt-4 text-gray-500
 
 `;
