@@ -1,9 +1,12 @@
-import React from "react";
+import { useState } from "react";
 import tw from "tailwind-styled-components";
 import Link from "next/link";
 import Footer from "./components/Footer";
 
 export default function search() {
+  const [pickup, setPickup] = useState("");
+  const [dropoff, setDropoff] = useState("");
+
   return (
     <Wrapper>
       <Link href="./">
@@ -33,8 +36,16 @@ export default function search() {
         </FromToIcons>
 
         <InputBoxes>
-          <Input type="text" placeholder="Enter Pickup location" />
-          <Input type="text" placeholder="Enter Drop location " />
+          <Input
+            placeholder="Enter Pickup location"
+            value={pickup}
+            onChange={(e) => setPickup(e.target.value)}
+          />
+          <Input
+            placeholder="Enter Drop location"
+            value={dropoff}
+            onChange={(e) => setDropoff(e.target.value)}
+          />
         </InputBoxes>
 
         <PlusIcon src="https://img.icons8.com/ios/50/000000/plus-math.png" />
@@ -46,7 +57,15 @@ export default function search() {
       </SavedPlaces>
 
       <Confirm>
-        <Link href="confirm">
+        <Link
+          href={{
+            pathname: "/confirm",
+            query: {
+              pickup: pickup,
+              dropoff: dropoff,
+            },
+          }}
+        >
           <ConfirmButton>Confirm Locations</ConfirmButton>
         </Link>
       </Confirm>
@@ -61,17 +80,13 @@ const Wrapper = tw.div`
 
 const BackIcon = tw.div`
   bg-white p-3 cursor-pointer
-
 `;
 
 const InputContainer = tw.div`
   bg-white flex justiify-between p-3 items-center
-
 `;
 const FromToIcons = tw.div`
   w-10 flex flex-col items-center
-
-
 `;
 
 const Circle = tw.img`
@@ -80,7 +95,6 @@ const Circle = tw.img`
 
 const Line = tw.img`
   h-10
-
 `;
 
 const Square = tw.img`
@@ -89,24 +103,18 @@ const Square = tw.img`
 
 const InputBoxes = tw.div`
   p-4 flex justify-center flex-col flex-1 
-
-
 `;
 
 const Input = tw.input`
   bg-gray-200 my-2 rounded-lg p-2 outline-none border-none 
-
 `;
 
 const PlusIcon = tw.img`
   h-10 w-10  bg-gray-200 rounded-full
-
 `;
 
 const SavedPlaces = tw.div`
-
   bg-white flex items-center px-4 mt-2 py-2
-
 `;
 
 const StarIcon = tw.img`
@@ -114,8 +122,7 @@ const StarIcon = tw.img`
 `;
 
 const ConfirmButton = tw.button`
-  bg-black text-white rounded-lg m-4 w-full p-2 text-2xl
-
+  bg-black text-white rounded-lg mt-4 mx-14 w-full p-2 text-2xl transform hover:scale-105 transition
 `;
 
 const Confirm = tw.div`
