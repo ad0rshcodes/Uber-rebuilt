@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import tw from "tailwind-styled-components";
 import mapboxgl from "mapbox-gl";
 
@@ -43,7 +42,5 @@ const Map = (props) => {
 export default Map;
 
 const Wrapper = tw.div`
-
 flex-1
-
 `;

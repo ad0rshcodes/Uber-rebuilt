@@ -19,21 +19,21 @@ export default function Home() {
         </Header>
 
         <ActionButtons>
-          <Link href="/search">
+          <Link href="/search" passHref>
             <Button>
               <ButtonImg src="https://i.ibb.co/Xx4G91m/uberblack.png"></ButtonImg>
               Ride
             </Button>
           </Link>
 
-          <Link href="/search">
+          <Link href="/search" passHref>
             <Button>
               <ButtonImg src="https://i.ibb.co/n776JLm/bike.png"></ButtonImg>
               Wheels
             </Button>
           </Link>
 
-          <Link href="/search">
+          <Link href="/search" passHref>
             <Button>
               <ButtonImg src="https://i.ibb.co/5RjchBg/uberschedule.png"></ButtonImg>
               Schedule
@@ -41,7 +41,7 @@ export default function Home() {
           </Link>
         </ActionButtons>
 
-        <Link href="/search">
+        <Link href="/search" passHref>
           <InputButton>
             Where to?
             <svg
@@ -49,11 +49,11 @@ export default function Home() {
               width="30"
               height="30"
               fill="currentColor"
-              class="bi bi-chevron-right"
+              className="bi bi-chevron-right"
               viewBox="0 0 16 16"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
               />
             </svg>
@@ -66,9 +66,7 @@ export default function Home() {
 }
 
 const Wrapper = tw.div`
-
-  flex flex-col bg-white	 h-screen		
-
+  flex flex-col bg-white h-screen
 `;
 
 const ActionItems = tw.div`
@@ -76,11 +74,11 @@ const ActionItems = tw.div`
 `;
 
 const Header = tw.div`
-  flex  justify-between
+  flex justify-between
 `;
 
 const UberLogo = tw.img`
-  h-28 
+  h-28
 `;
 
 const Profile = tw.div`
@@ -96,13 +94,11 @@ const UserImage = tw.img`
 `;
 
 const ActionButtons = tw.div`
-  flex justify-center 
-
+  flex justify-center
 `;
 
 const Button = tw.div`
-  flex bg-gray-200 rounded-lg shadow-lg mx-3 hover:shadow-xl transition-shadow duration-300 ease-in-out justify-center items-center flex-col flex-1 transition text-xl transform hover:scale-105 cursor-pointer
-
+  flex flex-col bg-gray-200 rounded-lg shadow-lg mx-3 hover:shadow-xl transition-shadow duration-300 ease-in-out justify-center items-center flex-1 transition text-xl transform hover:scale-105 cursor-pointer
 `;
 
 const ButtonImg = tw.img`
@@ -110,7 +106,5 @@ const ButtonImg = tw.img`
 `;
 
 const InputButton = tw.button`
-
-  bg-gray-200 p-5 rounded-lg w-96 mt-8 text-2xl flex justify-between hover:scale-105 transform transition duration-300 ease-in-out justify-center m-auto
-
+  bg-gray-200 p-5 rounded-lg w-1/2 mt-8 text-2xl flex justify-between hover:scale-105 transform transition duration-300 ease-in-out justify-center m-auto
 `;

@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import Footer from "./components/Footer";
 import tw from "tailwind-styled-components";
 import Map from "./components/Map";
 import { useRouter } from "next/dist/client/router";
+import RideSelector from "./components/RideSelector";
 
 const Confirm = () => {
   const router = useRouter();
@@ -58,10 +57,12 @@ const Confirm = () => {
         pickupCoordinates={pickupCoordinates}
         dropoffCoordinates={dropoffCoordinates}
       />
-      <RideSelection>
-        {pickupCoordinates}
-        {dropoffCoordinates}
-      </RideSelection>
+      <RideContainer>
+        <RideSelector />
+        <ConfirmButtonContainer>
+          <ConfirmButton>Confirm</ConfirmButton>
+        </ConfirmButtonContainer>
+      </RideContainer>
     </Wrapper>
   );
 };
@@ -69,9 +70,17 @@ const Confirm = () => {
 export default Confirm;
 
 const Wrapper = tw.div`
-    h-screen flex flex-col
+   h-screen flex flex-col
 `;
 
-const RideSelection = tw.div`
-    flex-1
+const RideContainer = tw.div`
+    flex flex-col
+`;
+
+const ConfirmButtonContainer = tw.div`
+flex justify-center border-t-2
+`;
+
+const ConfirmButton = tw.div`
+bg-black text-white cursor-pointer rounded-lg transform hover:scale-105 transition w-2/3 text-center p-2 text-lg my-2
 `;
