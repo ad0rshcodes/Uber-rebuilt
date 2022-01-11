@@ -19,7 +19,7 @@ function Login() {
       <Title>Login to access your account</Title>
       <LoginImage src="https://i.ibb.co/CsV9RYZ/login-image.png" />
       <SignInButton onClick={() => signInWithPopup(auth, provider)}>
-        Sign In With Google{" "}
+        Sign In With Google
       </SignInButton>
     </Wrapper>
   );

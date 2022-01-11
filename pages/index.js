@@ -10,9 +10,8 @@ import { useRouter } from "next/router";
 export default function Home() {
   const [user, setUser] = useState(null);
   const router = useRouter();
-
   useEffect(() => {
-    return onAuthStateChanged(auth, () => {
+    return onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser({
           name: user.displayName,
