@@ -1,9 +1,30 @@
+import { useState, useEffect } from "react";
 import tw from "tailwind-styled-components";
 import Map from "./components/Map";
 import Link from "next/link";
 import Footer from "./components/Footer";
+import { auth } from "../firebase";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const [user, setUser] = useState(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    return onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser({
+          name: user.displayName,
+          photoUrl: user.photoURL,
+        });
+      } else {
+        setUser(null);
+        router.push("/login");
+      }
+    });
+  });
+
   return (
     <Wrapper>
       <Map />
@@ -13,8 +34,11 @@ export default function Home() {
             <UberLogo src="https://i.ibb.co/84stgjq/uber-technologies-new-20218114.jpg" />
           </a>
           <Profile>
-            <Name>Adarsh Sharma</Name>
-            <UserImage src="https://media-exp1.licdn.com/dms/image/C5603AQHZBFgdG0WGDw/profile-displayphoto-shrink_200_200/0/1631380647000?e=1640822400&v=beta&t=x6ELTEZJvUp3arM1mdbw3-z4d4W5Gwgg3I9LP81cV88" />
+            <Name>{user && user.name}</Name>
+            <UserImage
+              src={user && user.photoUrl}
+              onClick={() => signOut(auth)}
+            />
           </Profile>
         </Header>
 
@@ -90,7 +114,7 @@ const Name = tw.div`
 `;
 
 const UserImage = tw.img`
-  rounded-full w-14 border-gray-800 border-2
+  rounded-full w-14 border-gray-800 border-2 cursor-pointer
 `;
 
 const ActionButtons = tw.div`

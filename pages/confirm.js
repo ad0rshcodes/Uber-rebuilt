@@ -3,18 +3,19 @@ import tw from "tailwind-styled-components";
 import Map from "./components/Map";
 import { useRouter } from "next/dist/client/router";
 import RideSelector from "./components/RideSelector";
+import Link from "next/link";
 
 const Confirm = () => {
   const router = useRouter();
   const { pickup, dropoff } = router.query;
 
-  console.log("pickup:", pickup);
-  console.log("dropoff:", dropoff);
+  // console.log("pickup:", pickup);
+  // console.log("dropoff:", dropoff);
 
-  const [pickupCoordinates, setPickupCoordinates] = useState();
-  const [dropoffCoordinates, setDropoffCoordinates] = useState();
+  const [pickupCoordinates, setPickupCoordinates] = useState([0, 0]);
+  const [dropoffCoordinates, setDropoffCoordinates] = useState([0, 0]);
 
-  const getPickupCoordinates = (pickup) => {
+  const getPickupCoordinates = () => {
     fetch(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${pickup}.json?` +
         new URLSearchParams({
@@ -30,7 +31,7 @@ const Confirm = () => {
       });
   };
 
-  const getDropoffCoordinates = (dropoff) => {
+  const getDropoffCoordinates = () => {
     fetch(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${dropoff}.json?` +
         new URLSearchParams({
@@ -53,12 +54,23 @@ const Confirm = () => {
 
   return (
     <Wrapper>
+      <BackIconContainer>
+        <Link href="/search" passHref>
+          <BackButton
+            src="https://img.icons8.com/ios-filled/50/000000/left.png"
+            alt="back icon"
+          />
+        </Link>
+      </BackIconContainer>
       <Map
         pickupCoordinates={pickupCoordinates}
         dropoffCoordinates={dropoffCoordinates}
       />
       <RideContainer>
-        <RideSelector />
+        <RideSelector
+          pickupCoordinates={pickupCoordinates}
+          dropoffCoordinates={dropoffCoordinates}
+        />
         <ConfirmButtonContainer>
           <ConfirmButton>Confirm</ConfirmButton>
         </ConfirmButtonContainer>
@@ -84,3 +96,10 @@ flex justify-center border-t-2
 const ConfirmButton = tw.div`
 bg-black text-white cursor-pointer rounded-lg transform hover:scale-105 transition w-2/3 text-center p-2 text-lg my-2
 `;
+
+const BackIconContainer = tw.div`
+absolute top-4 left-4 z-10 bg-white rounded-full cursor-pointer shadow-lg
+`;
+
+const BackButton = tw.img`
+object-contain `;
