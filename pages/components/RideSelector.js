@@ -6,7 +6,7 @@ const RideSelector = ({ pickupCoordinates, dropoffCoordinates }) => {
 
   // get ride duration from Mapbox API
   useEffect(() => {
-    const apiRideDuration = fetch(
+    fetch(
       `https://api.mapbox.com/directions/v5/mapbox/driving/${pickupCoordinates[0]},${pickupCoordinates[1]};${dropoffCoordinates[0]},${dropoffCoordinates[1]}?access_token=pk.eyJ1IjoiYWRhcnNoLXNoYXJtYTYyMTgiLCJhIjoiY2t2bHA5bDZuMDMzNjJ3cjJjYzNuNG1ieCJ9.QdNHT48FzKYo-MW9BsMUDA`
     ) //*Back ticks are called template literals
       .then((res) => res.json())

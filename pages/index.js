@@ -12,7 +12,7 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    return onAuthStateChanged(auth, (user) => {
+    return onAuthStateChanged(auth, () => {
       if (user) {
         setUser({
           name: user.displayName,
