@@ -1,14 +1,19 @@
-![Logo](https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/uber-logo-page-2018-1536771513.jpg)
 
-# Uber-rebuilt
 
-The project is been made to replicate the original booking page of Uber. The design is slightly less complex and different.
+![Logo](https://firebasestorage.googleapis.com/v0/b/uber-clone-1e803.appspot.com/o/uber-rebuilt-banner.png?alt=media&token=f7520c86-91ac-4bee-9fea-efa7ae3b8a0e)
+# Uber-Rebuilt
+Uber-rebuilt is a modification of the current Uber website, which resembles its functioning and UI. The project is been made to replicate the original booking page of Uber. 
+
+
+
+**Checkout our Build: https://uber-rebuilt.vercel.app**
 
 ## Features
 
-- Login with Google authorisation
-- Responsive
-- Option of choosing the vehicles and estimates the fare accordingly.
+- Login and Logout functionality (Google Authorisation) 
+- Responsiveness 
+- Pickup and Dropoff location selection
+- Maps from Mapbox API
 
 ## Run Locally
 
@@ -35,7 +40,6 @@ Start the server
 ```bash
   npm run dev
 ```
-
 ## Technologies Used
 
 Have a look at the technologies been used while developing [Uber-rebuilt](https://github.com/adarsh-sharma6218/Uber-rebuilt):
@@ -45,3 +49,13 @@ Have a look at the technologies been used while developing [Uber-rebuilt](https:
 - [Next.js](https://nextjs.org/) - The React Framework for Production.
 
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapidly building custom user interfaces.
+
+
+
+## Lessons Learned 🔥
+
+- Learned a new JavaScript framework **Next.js**. Best thing about Next.js is that you don't have to write long code for **router** 😅 + **faster rendering** 🚀 (due to server side rendering). 
+- **Styled components** in Tailwind CSS. This method is much cleaner than writing traditional Tailwind classes. 
+- Implementing **Google Authorisation** through Firebase.
+- React Hooks especially **useEffect** and **useState**.  
+- Some important CSS properties like **position, flexbox, transform, transition, etc.**
