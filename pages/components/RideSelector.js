@@ -18,6 +18,7 @@ const RideSelector = ({ pickupCoordinates, dropoffCoordinates }) => {
   return (
     <Wrapper>
       <Title>Choose a ride, or swipe up for more</Title>
+      {/* Ride options along with their prices.*/}
       {carList.map((data, index) => (
         <CarList key={index}>
           <Car>

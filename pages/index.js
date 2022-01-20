@@ -10,6 +10,8 @@ import { useRouter } from "next/router";
 export default function Home() {
   const [user, setUser] = useState(null);
   const router = useRouter();
+
+  //Login page redirect
   useEffect(() => {
     return onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -28,6 +30,7 @@ export default function Home() {
     <Wrapper>
       <Map />
       <ActionItems>
+        {/* Top logo and user details */}
         <Header>
           <a href="#">
             <UberLogo src="https://i.ibb.co/84stgjq/uber-technologies-new-20218114.jpg" />
@@ -41,6 +44,7 @@ export default function Home() {
           </Profile>
         </Header>
 
+        {/* Ride selection  */}
         <ActionButtons>
           <Link href="/search" passHref>
             <Button>
@@ -88,6 +92,7 @@ export default function Home() {
   );
 }
 
+// Styling
 const Wrapper = tw.div`
   flex flex-col bg-white h-screen
 `;

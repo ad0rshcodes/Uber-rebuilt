@@ -9,6 +9,7 @@ export default function Search() {
 
   return (
     <Wrapper>
+      {/* Top Back icon */}
       <Link href="./" passHref>
         <BackIcon>
           <svg
@@ -27,6 +28,7 @@ export default function Search() {
         </BackIcon>
       </Link>
 
+      {/* Square, circle Design */}
       <InputContainer>
         <FromToIcons>
           <Circle src="https://img.icons8.com/ios-filled/50/9CA3AF/filled-circle.png" />
@@ -56,11 +58,13 @@ export default function Search() {
         Saved Places
       </SavedPlaces>
 
+      {/* Confirm button */}
       <Confirm>
         <Link
           href={{
             pathname: "/confirm",
             query: {
+              //Transfering the location data to the next page. A change can be seen in the URL of the final page.
               pickup: pickup,
               dropoff: dropoff,
             },

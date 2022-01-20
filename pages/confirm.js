@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Confirm = () => {
   const router = useRouter();
-  const { pickup, dropoff } = router.query;
+  const { pickup, dropoff } = router.query; //fetching the pickup and dropoff locations from previous page.
 
   // console.log("pickup:", pickup);
   // console.log("dropoff:", dropoff);
@@ -17,7 +17,7 @@ const Confirm = () => {
 
   const getPickupCoordinates = () => {
     fetch(
-      `https://api.mapbox.com/geocoding/v5/mapbox.places/${pickup}.json?` +
+      `https://api.mapbox.com/geocoding/v5/mapbox.places/${pickup}.json?` + //Fetching the coordinates of the pickup location.
         new URLSearchParams({
           access_token:
             "pk.eyJ1IjoiYWRhcnNoLXNoYXJtYTYyMTgiLCJhIjoiY2t2bHA5bDZuMDMzNjJ3cjJjYzNuNG1ieCJ9.QdNHT48FzKYo-MW9BsMUDA",
@@ -33,7 +33,7 @@ const Confirm = () => {
 
   const getDropoffCoordinates = () => {
     fetch(
-      `https://api.mapbox.com/geocoding/v5/mapbox.places/${dropoff}.json?` +
+      `https://api.mapbox.com/geocoding/v5/mapbox.places/${dropoff}.json?` + //Fetching the coordinates of the dropoff location.
         new URLSearchParams({
           access_token:
             "pk.eyJ1IjoiYWRhcnNoLXNoYXJtYTYyMTgiLCJhIjoiY2t2bHA5bDZuMDMzNjJ3cjJjYzNuNG1ieCJ9.QdNHT48FzKYo-MW9BsMUDA",
@@ -62,10 +62,13 @@ const Confirm = () => {
           />
         </Link>
       </BackIconContainer>
-      <Map
+
+      <Map //loading map with desired pickup and dropoff coordinates.
         pickupCoordinates={pickupCoordinates}
         dropoffCoordinates={dropoffCoordinates}
       />
+
+      {/*Ride selector options along with their prices*/}
       <RideContainer>
         <RideSelector
           pickupCoordinates={pickupCoordinates}

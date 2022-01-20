@@ -9,7 +9,7 @@ function Login() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        router.push("/");
+        router.push("/"); //If user = true, then he/she is directed to the home screen.
       }
     });
   }, []);

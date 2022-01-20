@@ -10,17 +10,17 @@ const Map = (props) => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: "map",
-      style: "mapbox://styles/mapbox/streets-v11",
-      center: [450, 25],
+      style: "mapbox://styles/mapbox/streets-v11", //Styles of maps
+      center: [450, 25], //Default location to which map is loaded
       zoom: 3,
     });
 
     if (props.pickupCoordinates) {
-      addToMap(map, props.pickupCoordinates);
+      addToMap(map, props.pickupCoordinates); //Adding markers
     }
 
     if (props.dropoffCoordinates) {
-      addToMap(map, props.dropoffCoordinates);
+      addToMap(map, props.dropoffCoordinates); //Adding markers
     }
 
     if (props.pickupCoordinates && props.dropoffCoordinates) {
