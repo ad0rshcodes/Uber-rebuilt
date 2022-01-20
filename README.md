@@ -1,6 +1,7 @@
+<p align="center">
+<img src="https://firebasestorage.googleapis.com/v0/b/uber-clone-1e803.appspot.com/o/uber-rebuilt-banner.png?alt=media&token=f7520c86-91ac-4bee-9fea-efa7ae3b8a0e" width="650" height="650" />
+</p>
 
-
-![Logo](https://firebasestorage.googleapis.com/v0/b/uber-clone-1e803.appspot.com/o/uber-rebuilt-banner.png?alt=media&token=f7520c86-91ac-4bee-9fea-efa7ae3b8a0e)
 # Uber-Rebuilt
 Uber-rebuilt is a modification of the current Uber website, which resembles its functioning and UI. The project is been made to replicate the original booking page of Uber. 
 
@@ -14,6 +15,13 @@ Uber-rebuilt is a modification of the current Uber website, which resembles its 
 - Responsiveness 
 - Pickup and Dropoff location selection
 - Maps from Mapbox API
+
+## Demo
+<p align="center">
+<img src="https://github.com/adarsh-sharma6218/Uber-rebuilt/blob/master/uber-rebuilt.gif" />
+</p>
+
+
 
 ## Run Locally
 
