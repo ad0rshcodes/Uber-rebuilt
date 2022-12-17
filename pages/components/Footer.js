@@ -7,7 +7,7 @@ export default function Footer() {
     <div>
       <SourceLinks>
         <SocialIcons>
-          <Link href="https://github.com/adarsh-sharma6218" passHref={true}>
+          <Link href="https://github.com/adarshsharma-me" passHref={true}>
             <a target="_blank">
               <img
                 src="https://img.icons8.com/ios-glyphs/30/000000/github.png"
@@ -17,7 +17,7 @@ export default function Footer() {
           </Link>
 
           <Link
-            href="https://www.linkedin.com/in/adarsh-sharma6218/"
+            href="https://www.linkedin.com/in/adarshsharma-me/"
             passHref={true}
           >
             <a target="_blank">
@@ -25,7 +25,7 @@ export default function Footer() {
             </a>
           </Link>
 
-          <Link href="https://instagram.com/adarshsharma6218" passHref={true}>
+          <Link href="https://instagram.com/adarshsharma.me" passHref={true}>
             <a target="_blank">
               <img src="https://img.icons8.com/material-rounded/24/000000/instagram-new.png" />
             </a>
@@ -34,7 +34,7 @@ export default function Footer() {
 
         <Names>
           Made with 🚀 by:
-          <Link href="https://adarshsharma.ml/" passHref={true}>
+          <Link href="https://adarshsharma.me" passHref={true}>
             <a target="_blank">Adarsh Sharma</a>
           </Link>
         </Names>
